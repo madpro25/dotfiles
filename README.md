@@ -1,11 +1,13 @@
-<img src="src/thumbnail.png" alt="img" align="right" width="500px">
+<img src="./image_2022-12-14_01-41-58.png" alt="img" align="right" width="500px">
 
-This is my desktop made with awesomewm! Here's some details:
+My new setup in Hyprland! Here's some details:
 
-- **Operating System** - endeavouros
-- **Window Manager** - awesomewm
+- **Operating System** - arch linux
+- **Window Manager** - hyprland
 - **File Manager** - nemo
-- **Browser** - librewolf
-- **Terminal** - st
+- **Browser** - firefox
+- **Terminal** - kitty
 - **Shell** - bash
-- **Editor** - vim
+- **Editor** - nvim
+- **Top Bar** - waybar
+- **Launcher** - rofi
