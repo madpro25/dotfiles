@@ -1,0 +1,89 @@
+{
+    "layer": "top",
+    "modules-left": ["wlr/workspaces", "mpd", "custom/waybar-media"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "battery", "backlight", "bluetooth", "idle_inhibitor"],
+    "mpd": {
+    	"tooltip": false,
+	"format": "{stateIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+	"format-disconnected": "ﳌ",
+	"format-stopped": "",
+	"state-icons": {
+		"playing": "",
+        	"paused": ""
+        }
+    },
+    "pulseaudio": {
+	"tooltip": false,
+	"scroll-step": 5,
+	"format": "{icon} {volume}%",
+	"format-icons": {
+		"default": ["奄", "奔", "墳"]
+	},
+	"on-click": "pavucontrol"
+     },
+     "network": {
+	"tooltip": false,
+	"format-wifi": " {essid}",
+	"format-ethernet": " {ipaddr}",
+	"on-click": "kitty nmtui"
+     },
+     "cpu": {
+     	"interval": 10,
+     	"format": " {usage}%",
+     	"max-length": 10
+     },
+     "memory": {
+	"tooltip": false,
+	"format": " {}%"
+     },
+     "hyprland/window": {
+        "format": "👉 {}",
+	"separate-outputs": true
+     },
+     "battery": {
+        "format": "{capacity}% {icon}",
+	"interval": "20",
+        "format-icons": ["", "", "", "", ""]
+     },
+     "clock": {
+        "format": "{:%a, %b %d %I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+     },
+     "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "Π",
+            "deactivated": "Σ",
+        },
+        "tooltip": false,
+     },
+    "backlight": {
+    	"device": "intel_backlight",
+    	"format": "{percent}% {icon}",
+    	"format-icons": ["", ""],
+    	"on-scroll-up": "~/.config/waybar/increase_brightness.sh",
+    	"on-scroll-down": "~/.config/waybar/decrease_brightness.sh",
+    },
+    "bluetooth": {
+    	"format": " {status}",
+	"format-disabled": "",
+	"format-connected": " {num_connections} connected",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"on-click": "blueman-manager"
+    },
+    "custom/waybar-media": {
+        "format": "{icon} {}",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "smooth-scrolling-threshold": 10,
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "exec": "$HOME/.config/waybar/mediaplayer.py"
+    }
+}

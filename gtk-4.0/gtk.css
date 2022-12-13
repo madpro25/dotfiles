@@ -1,0 +1,63 @@
+/*
+ * Paste this in:
+ * ~/.config/gtk-3.0/gtk.css
+ * ~/.config/gtk-4.0/gtk.css
+ *
+ */
+
+/* Accents */
+@define-color accent_bg_color #FFB7C5;
+@define-color accent_fg_color black;
+@define-color accent_color #FFB7C5;
+
+/* Destructive */
+@define-color destructive_bg_color #FF3058;
+@define-color destructive_fg_color white;
+@define-color destructive_color #FF3058;
+
+/* Success */
+@define-color success_bg_color #7BFFB8;
+@define-color success_fg_color black;
+@define-color success_color #7BFFB8;
+
+/* Warning */
+@define-color warning_bg_color #FFB7C5;
+@define-color warning_fg_color #black;
+@define-color warning_color #FFB7C5;
+
+/* Error */
+@define-color error_bg_color #FF3058;
+@define-color error_fg_color white;
+@define-color error_color #FF3058;
+
+/* Window */
+@define-color window_bg_color #242428;
+@define-color window_fg_color white;
+
+/* View */
+@define-color view_bg_color #1F1F22;
+@define-color view_fg_color white;
+
+/* Headbar */
+@define-color headerbar_bg_color #2B2B30;
+@define-color headerbar_fg_color white;
+@define-color headerbar_border_color #404047;
+@define-color headerbar_backdrop_color @window_bg_color;
+/* @define-color headerbar_shade_color #{if($variant == 'light', transparentize(black, .93), transparentize(black, .64))}; */
+
+/* Card */
+@define-color card_bg_color #2B2B30;
+@define-color card_fg_color white;
+/* @define-color card_shade_color #{if($variant == 'light', transparentize(black, .93), transparentize(black, .64))}; */
+
+/* Dialog */
+@define-color dialog_bg_color #2B2B30;
+@define-color dialog_fg_color white;
+
+/* Popover */
+@define-color popover_bg_color #2B2B30;
+@define-color popover_fg_color white;
+
+/* Misc */
+/* @define-color shade_color #{if($variant == 'light', transparentize(black, .93), transparentize(black, .64))};
+@define-color scrollbar_outline_color #{if($variant == 'light', white, transparentize(black, .5))}; */% 

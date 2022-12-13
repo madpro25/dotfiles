@@ -1,0 +1,7 @@
+/** Basic config file **/
+
+configuration {
+  show-icons:         true;
+  icon-theme:         "";
+}
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
