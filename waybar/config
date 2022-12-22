@@ -1,8 +1,16 @@
 {
     "layer": "top",
-    "modules-left": ["wlr/workspaces", "mpd", "custom/waybar-media"],
+    "modules-left": ["wlr/workspaces", "mpd", "custom/waybar-media", "tray"],
     "modules-center": ["clock"],
     "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "battery", "backlight", "bluetooth", "idle_inhibitor"],
+
+    "wlr/workspaces": {
+        "all-outputs": true,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch worksace e-1",
+        "on-scroll-down": "hyprctl dispatch worksace e+1",
+
+    },
     "mpd": {
     	"tooltip": false,
 	"format": "{stateIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
@@ -44,11 +52,18 @@
      "battery": {
         "format": "{capacity}% {icon}",
 	"interval": "20",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "warning": 50,
+            "critical": 25,
+        },
      },
      "clock": {
         "format": "{:%a, %b %d %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+     },
+     "tray": {
+         "spacing": 10,
      },
      "idle_inhibitor": {
         "format": "{icon}",
