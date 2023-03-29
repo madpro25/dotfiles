@@ -1,4 +1,4 @@
-<img src="./image_2022-12-14_01-41-58.png" alt="img" align="right" width="500px">
+<img src="./image_2023-03-29_11-18-06.png" alt="img" align="right" width="500px">
 
 My new setup in Hyprland! Here's some details:
 
