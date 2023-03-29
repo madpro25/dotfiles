@@ -1,3 +1,5 @@
+@import url('/home/aaditya/.cache/wal/colors-waybar.css');
+
 * {
 	border: none;
 	border-radius: 0;
@@ -41,7 +43,7 @@ window#waybar.PCSX2 #window {
 	margin-left: 12px;
 	margin-bottom: 0;
 	border-radius: 26px;
-	background: #282a36;
+	background: @color0;/*#282a36;*/
 	transition-duration: 0.2s;
 }
 
@@ -65,7 +67,7 @@ window#waybar.PCSX2 #window {
 }
 
 #workspaces button.active {
-        background: #deb4fe;
+        background: @color6; /*#deb4fe;*/
         border-radius: 26px;
         color: #11111b;
 }
@@ -77,16 +79,16 @@ window#waybar.PCSX2 #window {
 	padding-right: 16px;
 	margin-bottom: 0;
 	border-radius: 26px;
-	background: #282a36;
+	background: @color0;/*#282a36;*/
 	transition: none;
-	color: #4d4d4d;
-	background: #5af78e;
+	color: @color2;/*#4d4d4d;*/
+	/*background: #5af78e;*/
 }
 
 #mpd.disconnected,
 #mpd.stopped {
 	color: #f8f8f2;
-	background: #282a36;
+	/*background: #282a36;*/
 }
 
 #network {
@@ -97,8 +99,8 @@ window#waybar.PCSX2 #window {
 	margin-bottom: 0;
 	border-radius: 26px;
 	transition: none;
-	color: #4d4d4d;
-	background: #bd93f9;
+	color: @color5/*#4d4d4d*/;
+	background: @color0/*#bd93f9*/;
 }
 
 #pulseaudio {
@@ -109,8 +111,8 @@ window#waybar.PCSX2 #window {
 	margin-bottom: 0;
 	border-radius: 26px;
 	transition: none;
-	color: #4d4d4d;
-	background: #9aedfe;
+	color: @color14/*#252525;#4d4d4d*/;
+	background: @color0/*#25e025;#252525*/;
 }
 
 #temperature {
@@ -121,8 +123,8 @@ window#waybar.PCSX2 #window {
 	margin-bottom: 0;
 	border-radius: 26px;
 	transition: none;
-	color: #4d4d4d;
-	background: #5af78e;
+	color: @color7/*#f8f8f2;#4d4d4d*/;
+	background: @color0/*linear-gradient(to bottom right, #f61e61, #fa82a7);#252525*/;
 }
 
 #cpu {
@@ -133,8 +135,8 @@ window#waybar.PCSX2 #window {
 	margin-bottom: 0;
 	border-radius: 26px;
 	transition: none;
-	color: #4d4d4d;
-	background: #f1fa8c;
+	color: @color11/*#f8f8f2;#4d4d4d*/;
+	background: @color0/*linear-gradient(to bottom right, #ff2d55, #252525);#252525*/;
 }
 
 #memory {
@@ -145,8 +147,8 @@ window#waybar.PCSX2 #window {
 	margin-bottom: 0;
 	border-radius: 26px;
 	transition: none;
-	color: #4d4d4d;
-	background: #ff6e67;
+	color: @color15/*#f8f8f2;#4d4d4d*/;
+	background: @color0/*linear-gradient(to bottom right, purple, #252525);#252525*/;
 }
 
 #clock {
@@ -159,93 +161,89 @@ window#waybar.PCSX2 #window {
 	border-radius: 26px;
 	transition: none;
 	color: #f8f8f2;
-	background: #282a36;
+	background: @color0;/*#282a36;*/
 }
 
 #battery {
 	margin-top: 8px;
 	margin-left: 8px;
-	margin-right: 12px;
-	padding-left: 16px;
+	margin-right: 8px;
+	padding-left: 12px;
 	padding-right: 16px;
 	margin-bottom: 0;
 	border-radius: 26px;
 	transition: none;
 	color: #f8f8f2;
-	background: #252525;
 }
 
+#battery.plugged {
+	background: linear-gradient(to bottom right, blue, #252525); /*#252525;*/
+}
+
+#battery.charging {
+	background: linear-gradient(to bottom right, green, #252525); /*#252525;*/
+}
+
+#battery.discharging {
+	background: linear-gradient(to bottom right, red, #252525); /*#252525;*/
+}
 
 #backlight {
 	margin-top: 8px;
-	margin-left: 1px;
+	margin-left: 5px;
 	margin-right: 5px;
 	padding-left: 16px;
 	padding-right: 16px;
 	margin-bottom: 0;
 	border-radius: 26px;
 	transition: none;
-	color: #f8f8f2;
-	background: #252525;
+	color: @color4/*#f8f8f2*/;
+	background: @color0/*linear-gradient(to bottom right, grey, #252525);#252525*/;
+}
+
+#idle_inhibitor {
+        transition-duration: 0.2s;
+	margin-top: 8px;
+	margin-left: 8px;
+	margin-right: 12px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-bottom: 0;
+	border-radius: 26px;
 }
 
 #idle_inhibitor.deactivated {
-	margin-top: 8px;
-	margin-left: 8px;
-	margin-right: 12px;
-	padding-left: 16px;
-	padding-right: 16px;
-	margin-bottom: 0;
-	border-radius: 26px;
-	transition: none;
 	color: #f8f8f2;
-	background: #252525;
+	background: @color0;
 }
 
 #idle_inhibitor.activated {
-	margin-top: 8px;
-	margin-left: 8px;
-	margin-right: 12px;
-	padding-left: 16px;
-	padding-right: 16px;
-	margin-bottom: 0;
-	border-radius: 26px;
-	transition: none;
 	color: #f8f8f2;
 	background: #ff2525;
 }
 
-#bluetooth.on {
+#bluetooth {
 	margin-top: 8px;
 	margin-left: 8px;
 	padding-left: 16px;
 	padding-right: 16px;
 	margin-bottom: 0;
 	border-radius: 26px;
+}
+
+#bluetooth.on {
 	transition: none;
 	color: #f8f8f2;
-	background: #2545dd;
+	background: @color0;
 }
 
 #bluetooth.connected {
-	margin-top: 8px;
-	margin-left: 8px;
-	padding-left: 16px;
-	padding-right: 16px;
-	margin-bottom: 0;
-	border-radius: 26px;
 	transition: none;
 	color: #f8f8f2;
 	background: #252525;
 }
 
 #bluetooth.off {
-	margin-top: 8px;
-	margin-left: 8px;
-	padding-left: 16px;
-	padding-right: 16px;
-	margin-bottom: 0;
-	border-radius: 26px;
 	transition: none;
 	color: #4d4d4d;
 	background: #252525;
@@ -261,7 +259,7 @@ window#waybar.PCSX2 #window {
 	background: #282a36;
 	transition: none;
 	color: #f8f8f2;
-	background: #282a36;
+	background: @color0;/*#282a36;*/
 }
 
 #tray {
@@ -271,9 +269,9 @@ window#waybar.PCSX2 #window {
 	padding-right: 16px;
 	margin-bottom: 0;
 	border-radius: 26px;
-	background: #282a36;
+	/*background: #282a36;*/
 	transition: none;
 	color: #f8f8f2;
-	background: #282a36;
+	background: @color0;/*#282a36;*/
 }
 

@@ -2,13 +2,14 @@
     "layer": "top",
     "modules-left": ["wlr/workspaces", "mpd", "custom/waybar-media", "tray"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "battery", "backlight", "bluetooth", "idle_inhibitor"],
+    "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "backlight", "battery", "bluetooth", "idle_inhibitor"],
 
     "wlr/workspaces": {
         "all-outputs": true,
         "on-click": "activate",
         "on-scroll-up": "hyprctl dispatch worksace e-1",
         "on-scroll-down": "hyprctl dispatch worksace e+1",
+        "sort-by-number": true,
 
     },
     "mpd": {

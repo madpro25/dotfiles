@@ -1,0 +1,4 @@
+editor.action.organizeImport
+semanticTokens.inspect
+workspace.undo
+document.toggleCodeLens

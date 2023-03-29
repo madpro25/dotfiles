@@ -88,7 +88,7 @@ mainbox {
 
 element {
     background-color:               @background;
-    text-color:                     @foreground;
+    text-color:                     @background;
     orientation:                    vertical;
     border-radius:                  0%;
     padding:                        2% 0% 2% 0%;
