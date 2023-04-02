@@ -1,0 +1,24 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "javascript",
+        "graphql",
+        "html",
+        "yaml",
+        "json",
+        "python"],
+    // c and c++ config
+    "clangd.compilationDatabasePath": "~/Documents/c codes/",
+
+    // python config
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+
+    "snippets.ultisnips.directories":
+    [
+        "UltiSnips",
+        "~/.config/nvim/utils/snips"
+    ]
+
+}
