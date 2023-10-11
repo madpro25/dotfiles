@@ -158,16 +158,29 @@
 # Gradient mode, only hex defined colors are supported,
 # background must also be defined in hex or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
+# wall.jpg
+# gradient = 1
+# gradient_count = 8
+# gradient_color_1 = '#16213E'
+# gradient_color_2 = '#0F3460'
+# gradient_color_3 = '#533483'
+# gradient_color_4 = '#E94560'
+# gradient_color_5 = '#E94560'
+# gradient_color_6 = '#E94560'
+# gradient_color_7 = '#E94560'
+# gradient_color_8 = '#E94560'
+
+# 17.png
  gradient = 1
  gradient_count = 8
- gradient_color_1 = '#16213E'
- gradient_color_2 = '#0F3460'
- gradient_color_3 = '#533483'
- gradient_color_4 = '#E94560'
- gradient_color_5 = '#E94560'
- gradient_color_6 = '#E94560'
- gradient_color_7 = '#E94560'
- gradient_color_8 = '#E94560'
+ gradient_color_1 = '#992b43'
+ gradient_color_2 = '#c94461'
+ gradient_color_3 = '#f55b7c'
+ gradient_color_4 = '#ffd147'
+ gradient_color_5 = '#ffd147'
+ gradient_color_6 = '#ffd147'
+ gradient_color_7 = '#ffd147'
+ gradient_color_8 = '#ffd147'
 
 
 

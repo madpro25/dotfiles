@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "systemctl suspend && ~/.config/hypr/scripts/lock.sh",
     "text" : "Suspend",
     "keybind" : "u"
 }

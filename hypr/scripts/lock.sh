@@ -22,5 +22,6 @@ swaylock \
     --inside-wrong-color f38ba8 \
     --inside-clear-color a6e3a1 \
     --color 1e1e2e80 \
+    --effect-pixelate 5 \
     --clock \
     --indicator

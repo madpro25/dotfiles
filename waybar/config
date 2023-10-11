@@ -1,8 +1,8 @@
 {
     "layer": "top",
-    "modules-left": ["wlr/workspaces", "mpd", "custom/waybar-media", "tray"],
+    "modules-left": ["hyprland/workspaces", "custom/waybar-media", "tray"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "backlight", "battery", "bluetooth", "idle_inhibitor"],
+    "modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "backlight", "battery"],
 
     "wlr/workspaces": {
         "all-outputs": true,
@@ -26,6 +26,7 @@
 	"tooltip": false,
 	"scroll-step": 5,
 	"format": "{icon} {volume}%",
+        "format-muted":"   muted",
 	"format-icons": {
 		"default": ["奄", "奔", "墳"]
 	},
@@ -33,7 +34,7 @@
      },
      "network": {
 	"tooltip": false,
-	"format-wifi": " {essid}",
+	"format-wifi": "  {essid}",
 	"format-ethernet": " {ipaddr}",
 	"on-click": "kitty nmtui"
      },
