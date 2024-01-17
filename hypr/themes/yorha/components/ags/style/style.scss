@@ -1,0 +1,18 @@
+* {
+  all: unset;
+}
+
+* {
+  font-family: FOT-Rodin Pro M, Roboto, sans-serif;
+}
+
+@import "nier";
+
+@import "widgets/workspace.scss";
+@import "widgets/top.scss";
+@import "widgets/imagematrix.scss";
+@import "widgets/applauncher.scss";
+@import "widgets/info.scss";
+
+@import "windows/settings.scss";
+@import "windows/notifications.scss";

@@ -96,7 +96,7 @@
         "escape": true,
         "return-type": "json",
         "max-length": 40,
-        "on-click": "playerctl play-pause",
+        "on-click": "~/.config/hypr/scripts/play-pause.sh",
         "on-click-right": "playerctl stop",
         "smooth-scrolling-threshold": 10,
         "on-scroll-up": "playerctl next",

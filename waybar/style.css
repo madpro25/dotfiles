@@ -50,7 +50,7 @@ window#waybar.PCSX2 #window {
 #workspaces button {
 	padding: 0 10px;
 	transition-duration: 0.2s;
-	color: #f8f8f2;
+	color: @color7;
 	background: transparent;
 	font-size: 16px;
 }
@@ -258,7 +258,7 @@ window#waybar.PCSX2 #window {
 	border-radius: 26px;
 	background: #282a36;
 	transition: none;
-	color: #f8f8f2;
+	color: @color7;
 	background: @color0;/*#282a36;*/
 }
 
@@ -271,7 +271,7 @@ window#waybar.PCSX2 #window {
 	border-radius: 26px;
 	/*background: #282a36;*/
 	transition: none;
-	color: #f8f8f2;
+	color: @color7;
 	background: @color0;/*#282a36;*/
 }
 
