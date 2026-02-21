@@ -1,0 +1,99 @@
+#!/bin/sh
+
+logfile="$HOME/.dkrc.log"
+[ -d "$HOME/.local/share/xorg" ] && logfile="$HOME/.local/share/xorg/dkrc.log"
+: > "$logfile"
+
+if hash sxhkd >/dev/null 2>&1; then
+    pkill sxhkd
+    sxhkd -c "$HOME/.config/sxhkd/sxhkdrc" &
+fi
+
+xsetroot -cursor_name left_ptr &
+#xrandr -s 1920x1080 &
+nitrogen --restore &
+polybar &
+dunst &
+picom &
+numlockx &
+greenclip &
+nm-applet &
+xinput set-prop "ASUE140A:00 04F3:3134 Touchpad" "libinput Natural Scrolling Enabled" 1 &
+xinput set-prop "ASUE140A:00 04F3:3134 Touchpad" "libinput Tapping Enabled" 1 &
+blueman-applet &
+libinput-gestures-setup start
+
+mon1='DP-4'
+mon2='DP-4'
+
+monitor_count=$(xrandr | grep -sw 'connected' | wc -l)
+
+if [ $monitor_count -gt 1 ]; then
+    mon2='HDMI-0'
+fi
+
+{
+    dkcmd set numws=9
+
+    if [ $mon2 = 'HDMI-0' ]; then
+        dkcmd set ws=_ apply layout=dwindle master=1 stack=1 pad left=10 right=10 top=10 bottom=10 gap=15 msplit=0.4 ssplit=0.5
+        dkcmd set ws=9 layout=grid pad l=600 r=600 t=200 b=200 gap=15
+    fi
+
+    if [ $mon2 = 'DP-4' ]; then
+        dkcmd set ws=_ apply layout=dwindle master=1 stack=3 pad left=5 right=5 top=5 bottom=5 gap=5 msplit=0.5 ssplit=0.5
+    fi
+
+    dkcmd set \
+        ws=1  name="" \
+        ws=2  name="" \
+        ws=3  name="" \
+        ws=4  name="" \
+        ws=5  name="" \
+        ws=6  name="" \
+        ws=7  name="" \
+        ws=8  name="" \
+        ws=9  name=""
+
+    dkcmd set static_ws=true \
+        ws=1  mon=$mon1 \
+        ws=2  mon=$mon1 \
+        ws=3  mon=$mon1 \
+        ws=4  mon=$mon2 \
+        ws=5  mon=$mon2 \
+        ws=6  mon=$mon2 \
+        ws=7  mon=$mon2 \
+        ws=8  mon=$mon2 \
+        ws=9  mon=$mon2
+
+    dkcmd set focus_open=true focus_urgent=true focus_mouse=true
+    dkcmd set tile_tohead=0 tile_hints=false
+    dkcmd set win_minwh=50 win_minxy=10
+    dkcmd set smart_gap=false smart_border=false
+    dkcmd set mouse mod=super move=button1 resize=button3
+    #dkcmd set border w=5 ow=3 colour f='#f2cdcd' u='#32303f' r='#45475a' of='#32303f' ou='#4c566a' or='#4c566a'
+
+    #Бордеры и цвет бордера
+    dkcmd set border width=3 outer_width=0 \
+    colour \
+    focus='#cba6f7' \
+    unfocus='#2e3440' \
+    urgent='#2e3440' \
+    outer_focus='#6c7086' \
+    outer_unfocus='#2e3440' \
+    outer_urgent='#2e3440'
+
+
+    dkcmd rule class="^firefox$"
+    dkcmd rule class="^music" ws=7
+    dkcmd rule class="^telegram-desktop"
+    dkcmd rule class="^telegram"
+    dkcmd rule class="^(nitrogen|lxappearance|pavucontrol|headset|blueman|nm-applet)$" float=true
+    dkcmd rule apply '*'
+
+} >> "$logfile" 2>&1
+
+if grep -q 'error:' "$logfile"; then
+    hash notify-send && notify-send -t 0 -u critical "dkrc has errors" \
+        "$(awk '/error:/ {sub(/^error: /, ""); gsub(/</, "\<"); print}' "$logfile")"
+    exit 1

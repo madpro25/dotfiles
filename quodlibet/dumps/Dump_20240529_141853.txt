@@ -1,0 +1,120 @@
+=== SYSTEM INFORMATION:
+Quod Libet 4.6.0
+Mutagen 1.47.0
+Python 3.12.3 (main, Apr 23 2024, 09:16:07) [GCC 13.2.1 20240417] linux
+Platform Linux-6.9.1-arch1-2.1-g14-x86_64-with-glibc2.39
+=== STACK TRACE
+
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.12/site-packages/quodlibet/util/__init__.py", line 716, in wrap
+    return handler(that, *args)
+           ^^^^^^^^^^^^^^^^^^^^
+
+  File "/usr/lib/python3.12/site-packages/quodlibet/qltk/controls.py", line 298, in __next
+    player.next()
+
+  File "/usr/lib/python3.12/site-packages/quodlibet/player/_base.py", line 274, in next
+    self._source.next()
+
+  File "/usr/lib/python3.12/site-packages/quodlibet/qltk/songmodel.py", line 78, in next
+    self.q.next()
+
+  File "/usr/lib/python3.12/site-packages/quodlibet/qltk/queue.py", line 367, in next
+    self.current_iter = self.order.next_explicit(self, iter_)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/usr/lib/python3.12/site-packages/quodlibet/order/__init__.py", line 68, in next_explicit
+    return self.next(playlist, iter)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/usr/lib/python3.12/site-packages/quodlibet/order/reorder.py", line 27, in next
+    remaining = self.remaining(playlist)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/usr/lib/python3.12/site-packages/quodlibet/order/__init__.py", line 138, in remaining
+    played = set(map(get_index, self._played))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/usr/lib/python3.12/site-packages/quodlibet/order/__init__.py", line 136, in get_index
+    return playlist.get_path(iter).get_indices()[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+AttributeError: 'NoneType' object has no attribute 'get_indices'
+
+=== LOG:
+D: [37955.186] qltk.tracker.__changed: Current song changed, updating current file
+D: [37955.199] player.gstbe.player.__message: Recalculate latency
+D: [37955.203] player.gstbe.player.__message: Recalculate latency
+D: [37955.209] PlaylistModel.set: Filling view model with 205 songs.
+D: [37968.194] CommandRegistry.handle_line: command: 'focus'(*[])
+D: [37968.194] CommandRegistry.run: Running '_focus' with params () 
+D: [38004.332] GStreamerPlayer.go_to: Going to <Gtk.TreeIter object at 0x757be483e8d0 (GtkTreeIter at 0x580f596a91a0)>
+D: [38004.332] PlaylistMux.go_to: Told to go to <Gtk.TreeIter object at 0x757be483e8d0 (GtkTreeIter at 0x580f596a91a0)>
+D: [38004.332] QueueModel.go_to: Told to go to <Gtk.TreeIter object at 0x757be483e8d0 (GtkTreeIter at 0x580f596a91a0)>
+D: [38004.332] PlaylistModel.go_to: Told to go to None
+D: [38004.332] GStreamerPlayer._end: End song
+D: [38004.336] player.gstbe.player.__destroy_pipeline: Destroying Gstreamer pipeline
+D: [38004.341] player.gstbe.player.__init_pipeline: User pipeline (from player.gst_pipeline): ''
+D: [38004.357] player.gstbe.player.__init_pipeline: GStreamer plugin pipeline: []
+D: [38004.357] player.gstbe.util.link_many: Attempting to link Gstreamer element(s): ['GstVolume', 'GstPulseSink']
+D: [38004.366] PlayQueue._write: Saving play queue after 98.4s
+D: [38004.368] util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: [38004.369] util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x757bef92f440>
+D: [38004.400] player.gstbe.player.__message: Recalculate latency
+D: [38004.477] player.gstbe.player.__message: Recalculate latency
+D: [38004.479] player.gstbe.player.__message: Recalculate latency
+D: [38004.528] SongFileLibrary._changed('main'): Emitting changed for 2 item(s) (e.g. '/home/aaditya/Music/Men I Trust - Lauren.flac'...)
+D: [38004.530] qltk.completion.__update_song: Updated tag model for 2 songs
+D: [38004.545] XSPFBackedPlaylist.write: Writing '/home/aaditya/.config/quodlibet/playlists/chill.xspf'
+D: [38004.553] PlaylistLibrary.changed('PlaylistLibrary for main'): Changing 1 items directly.
+D: [38004.553] PlaylistLibrary._changed('PlaylistLibrary for main'): Emitting changed for 1 item(s) (e.g. 'chill'...)
+D: [38004.553] PlaylistsBrowser.changed: Refreshing view in <PlaylistsBrowser @ 0x757be5f697c0> for <XSPFBackedPlaylist at '/home/aaditya/.config/quodlibet/playlists/chill.xspf'>
+D: [38004.554] qltk.tracker.__changed: Current song changed, updating current file
+D: [38004.561] PlaylistModel.set: Filling view model with 205 songs.
+D: [38023.472] config.save: Writing config...
+D: [38023.525] library.save: Saving all libraries...
+D: [38023.526] SongFileLibrary.save('main'): Saving contents to '/home/aaditya/.config/quodlibet/songs'
+D: [38085.937] PlayQueue._write: Saving play queue after 81.6s
+D: [38205.939] PlayQueue._write: Saving play queue after 120.0s
+D: [38238.115] player.gstbe.player.__about_to_finish: About to finish (async)
+D: [38238.116] player.gstbe.player.__about_to_finish_sync: About to finish (sync)
+D: [38238.116] player.gstbe.player.__about_to_finish_sync: Select next song in mainloop..
+D: [38238.116] QueueModel.next_ended: Using <Random>.next_implicit() to get next song
+E: [38238.117] player.gstbe.player.__about_to_finish: __init__.py:1093:call: quodlibet.util.MainRunnerError: 'NoneType' object has no attribute 'get_indices'
+D: [38239.481] player.gstbe.player.__message: Stream EOS
+D: [38239.481] GStreamerPlayer._end: End song
+D: [38239.484] player.gstbe.player.__destroy_pipeline: Destroying Gstreamer pipeline
+D: [38239.512] SongFileLibrary._changed('main'): Emitting changed for 1 item(s) (e.g. '/home/aaditya/Music/Dreamgirl - Teenage Blue.flac'...)
+D: [38239.513] qltk.completion.__update_song: Updated tag model for 1 songs
+D: [38239.521] XSPFBackedPlaylist.write: Writing '/home/aaditya/.config/quodlibet/playlists/chill.xspf'
+D: [38239.526] PlaylistLibrary.changed('PlaylistLibrary for main'): Changing 1 items directly.
+D: [38239.526] PlaylistLibrary._changed('PlaylistLibrary for main'): Emitting changed for 1 item(s) (e.g. 'chill'...)
+D: [38239.526] PlaylistsBrowser.changed: Refreshing view in <PlaylistsBrowser @ 0x757be5f697c0> for <XSPFBackedPlaylist at '/home/aaditya/.config/quodlibet/playlists/chill.xspf'>
+D: [38239.530] PlaylistModel.set: Filling view model with 205 songs.
+D: [38265.252] QueueModel.go_to: Told to go to None
+D: [38265.252] PlaylistModel.go_to: Told to go to None
+D: [38265.252] PlaylistModel.next: Using <Random>.next_explicit() to get next song
+D: [38265.252] OrderShuffle.remaining: Played 0 of 205 song(s)
+D: [38265.254] GStreamerPlayer._end: End song
+D: [38265.255] player.gstbe.player.__destroy_pipeline: Destroying Gstreamer pipeline
+D: [38265.255] player.gstbe.player.__init_pipeline: User pipeline (from player.gst_pipeline): ''
+D: [38265.267] player.gstbe.player.__init_pipeline: GStreamer plugin pipeline: []
+D: [38265.267] player.gstbe.util.link_many: Attempting to link Gstreamer element(s): ['GstVolume', 'GstPulseSink']
+D: [38265.276] util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: [38265.282] util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x757be489c170>
+D: [38265.353] player.gstbe.player.__message: Recalculate latency
+D: [38265.354] player.gstbe.player.__message: Recalculate latency
+D: [38265.359] player.gstbe.player.__message: Recalculate latency
+D: [38265.398] SongFileLibrary._changed('main'): Emitting changed for 1 item(s) (e.g. '/home/aaditya/Music/Men I Trust - Slap Pie.flac'...)
+D: [38265.399] qltk.completion.__update_song: Updated tag model for 1 songs
+D: [38265.408] XSPFBackedPlaylist.write: Writing '/home/aaditya/.config/quodlibet/playlists/chill.xspf'
+D: [38265.413] PlaylistLibrary.changed('PlaylistLibrary for main'): Changing 1 items directly.
+D: [38265.413] PlaylistLibrary._changed('PlaylistLibrary for main'): Emitting changed for 1 item(s) (e.g. 'chill'...)
+D: [38265.413] PlaylistsBrowser.changed: Refreshing view in <PlaylistsBrowser @ 0x757be5f697c0> for <XSPFBackedPlaylist at '/home/aaditya/.config/quodlibet/playlists/chill.xspf'>
+D: [38265.413] qltk.tracker.__changed: Current song changed, updating current file
+D: [38265.422] PlaylistModel.set: Filling view model with 205 songs.
+D: [38275.223] PlayQueue._write: Saving play queue after 69.3s
+D: [38277.217] PlaylistPluginHandler.populate_menu: Found 0 Playlist plugin(s): []
+D: [38280.650] QueueModel.next: Using <Random>.next_explicit() to get next song
+E: [38280.652] errorreport.main.errorhook: __init__.py:136:get_index: AttributeError: 'NoneType' object has no attribute 'get_indices'

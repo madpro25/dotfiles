@@ -1,0 +1,148 @@
+[settings]
+columns = ~#track,~people,~title~version,~album~discsubtitle,~#length
+	
+default_rating = 0.5
+scan = /home/aaditya/Music
+
+[memory]
+browser = Paned
+browser_covergrid_maximized = 4
+chooser_dir = /home/aaditya
+column_expands = ~people,1,~title~version,1,~album~discsubtitle,1
+	
+column_widths = ~people,-1,~title~version,-1,~album~discsubtitle,-1
+	
+download_cover_art_maximized = 4
+open_browsers = 
+plugin_cover_maximized = 4
+plugin_prefs_maximized = 4
+plugin_prefs_position = 0 0
+plugin_prefs_size_ = 960 1048
+plugin_selection = Equalizer
+prefs_page = songlist
+queue = True
+queue_disable = False
+queue_expanded = True
+queue_keep_songs = False
+queue_position = 0.39718804920913886
+quodlibet_information_maximized = 4
+quodlibet_last_active_version = 4.6.0
+quodlibet_maximized = 4
+quodlibet_position = 0 0
+quodlibet_properties_maximized = 4
+quodlibet_properties_pos = 0.07508532423208192
+quodlibet_size_ = 960 524
+repeat = False
+seek = 0
+shuffle = True
+shufflequeue = false
+sidebar_pos = 0.25
+song = /home/aaditya/Music/MISO - Castles.flac
+sortby = 0~#track
+	
+volume = 1.0
+
+[player]
+gst_buffer = 3.0
+gst_use_jack = true
+is_playing = False
+replaygain_mode = auto
+
+[browsers]
+album_sort = 5
+albumlist_pos = 0.3996832101372756
+audiofeeds_pos = 0.3996832101372756
+collectionbrowser_pos = 0.3996832101372756
+covergrid_pos = 0.4035714285714286
+equal_pane_width = true
+filesystem = /home/aaditya/resume
+filesystem_pos = 0.3996832101372756
+internetradio_pos = 0.3996832101372756
+pane_mode = 0
+pane_selection = 1	.
+	1	.
+panedbrowser_pane_widths = 0.6015037593984962
+	
+panedbrowser_pos = 0.2833957553058677
+playlist = chill
+playlistsbrowser_pos = 0.39213602550478216
+query_text = 
+soundcloud_pos = 0.3996832101372756
+soundcloud_refresh_token = EXoGAIZgVRc7WAWknpWONQk6buZExOm2
+soundcloud_token = 2-180752-1408970526-Js7JxZKVu3CgN
+soundcloud_user_id = 
+
+[library]
+watch = true
+
+[display]
+duration_format = standard
+
+[albumart]
+prefer_embedded = true
+
+[__config__]
+version = 0
+
+[plugins]
+active_plugins = artwork-url-cover
+	Download Album Art
+	musicbrainz-cover
+	mpris
+	Download Cover Art
+	SeekBar
+	Tray Icon
+	discogs-cover
+	Tap BPM
+	HeadphoneMonitor
+	Equalizer
+	MusicBrainz lookup
+	AcoustidSearch
+	Python Console
+	Theme Switcher
+	Notify
+	Force Write
+animosd_monitor = 0
+animosd_pos_x = 0.5
+animosd_pos_y = 0.5
+cover_edit = False
+cover_edit_cmd = gimp
+cover_engine_discogs = True
+cover_filename = cover.jpg
+cover_fit = false
+cover_pos = 0.37721518987341773
+cover_resultsmax = 6
+cover_searchraw = True
+download_cover_art_re_encode = false
+download_cover_art_save_pattern = <albumartist|<albumartist>|<artist>><album| - <album>| - <title>>
+equalizer_levels = {'Current': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+fingerprint_group_by_dir = true
+fingerprint_write_mb_tags = true
+icon_tooltip = <album|<album~discnumber~part~tracknumber~title~version>|<artist~title~version>>
+mpris_window_hide = false
+notify_bodypattern = <album|<album><discsubtitle| - <discsubtitle>>
+	><~year|<~year>>
+notify_show_next_button = False
+notify_show_notifications = all
+notify_show_only_when_unfocused = False
+quodlibet.fake.plugins.gajim_status_accounts = 
+quodlibet.fake.plugins.gajim_status_pattern = <artist> - <title>
+quodlibet.fake.plugins.gajim_status_paused = True
+quodlibet.fake.plugins.gajim_status_statuses = online chat
+quodlibet.fake.plugins.visualisations_executable = projectM-pulseaudio
+quodlibet.fake.plugins.waveformseekbar_show_current_pos = False
+randomalbum_use_weights = 0
+scrobbler_service = Last.fm
+theme switcher_prefer_dark = true
+theme switcher_theme = Sweet
+titlecase_allow_all_caps = True
+titlecase_human_title_case = True
+
+[rename]
+windows = true
+
+[editing]
+alltags = true
+auto_save_changes = true
+show_multi_line_tags = true
+

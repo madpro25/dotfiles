@@ -39,7 +39,7 @@
 	"on-click": "kitty nmtui"
      },
      "cpu": {
-     	"interval": 10,
+     	"interval": 5,
      	"format": " {usage}%",
      	"max-length": 10
      },

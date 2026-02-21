@@ -1,0 +1,125 @@
+=== SYSTEM INFORMATION:
+Quod Libet 4.6.0
+Mutagen 1.47.0
+Python 3.11.7 (main, Jan 29 2024, 16:03:57) [GCC 13.2.1 20230801] linux
+Platform Linux-6.7.4-arch1-1.1-g14-x86_64-with-glibc2.39
+=== STACK TRACE
+
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.11/site-packages/quodlibet/errorreport/faulthandling.py", line 138, in raise_and_clear_error
+    raise FaultHandlerCrash(text)
+
+quodlibet.errorreport.faulthandling.FaultHandlerCrash: Fatal Python error: Segmentation fault
+
+Stack (most recent call first):
+  File "/usr/lib/python3.11/site-packages/quodlibet/order/__init__.py", line 136 in get_index
+  File "/usr/lib/python3.11/site-packages/quodlibet/order/__init__.py", line 138 in remaining
+  File "/usr/lib/python3.11/site-packages/quodlibet/order/reorder.py", line 27 in next
+  File "/usr/lib/python3.11/site-packages/quodlibet/order/__init__.py", line 68 in next_explicit
+  File "/usr/lib/python3.11/site-packages/quodlibet/qltk/songmodel.py", line 260 in next
+  File "/usr/lib/python3.11/site-packages/quodlibet/qltk/songmodel.py", line 72 in next
+  File "/usr/lib/python3.11/site-packages/quodlibet/player/_base.py", line 274 in next
+  File "/usr/lib/python3.11/site-packages/quodlibet/qltk/controls.py", line 298 in __next
+  File "/usr/lib/python3.11/site-packages/quodlibet/util/__init__.py", line 716 in wrap
+  File "/usr/lib/python3.11/site-packages/gi/overrides/Gtk.py", line 1694 in main
+  File "/usr/lib/python3.11/site-packages/quodlibet/_main.py", line 385 in run
+  File "/usr/lib/python3.11/site-packages/quodlibet/main.py", line 201 in main
+  File "/usr/bin/quodlibet", line 14 in <module>
+
+Extension modules: gi._gi, cairo._cairo, gi._gi_cairo, _dbus_bindings, _dbus_glib_bindings, lxml._elementpath, lxml.etree (total: 7)
+
+=== LOG:
+D: [0000.523] util.importhelper.get_importables: Ignoring '/usr/lib/python3.11/site-packages/quodlibet/ext/query/__pycache__'
+D: [0000.776] ModuleScanner.rescan: Rescanning done: 100 added, 0 removed, 2 error(s)
+D: [0000.777] PluginManager.rescan: Rescanning done.
+D: [0000.777] PluginManager.register_handler: Registering handler: 'EditTagsPluginHandler'
+D: [0000.777] PluginManager.register_handler: Registering handler: 'RenameFilesPluginHandler'
+D: [0000.777] PluginManager.register_handler: Registering handler: 'TagsFromPathPluginHandler'
+D: [0000.777] PluginManager.register_handler: Registering handler: 'GStreamerPlayer'
+D: [0000.779] PluginManager.register_handler: Registering handler: 'SongsMenuPluginHandler'
+D: [0000.779] PluginManager.enable: Enable 'Download Album Art'
+D: [0000.779] PluginManager.enable: Enable 'Python Console'
+D: [0000.779] PluginManager.enable: Enable 'Download Cover Art'
+D: [0000.779] PluginManager.enable: Enable 'Force Write'
+D: [0000.779] PluginManager.enable: Enable 'Tap BPM'
+D: [0000.779] PluginManager.enable: Enable 'MusicBrainz lookup'
+D: [0000.779] PluginManager.enable: Enable 'AcoustidSearch'
+D: [0000.779] PluginManager.register_handler: Registering handler: 'CoverPluginHandler'
+D: [0000.779] PluginManager.enable: Enable 'artwork-url-cover'
+D: [0000.779] CoverPluginHandler.plugin_enable: Registered ArtworkUrlCover cover source
+D: [0000.779] PluginManager.enable: Enable 'discogs-cover'
+D: [0000.779] CoverPluginHandler.plugin_enable: Registered DiscogsCover cover source
+D: [0000.779] PluginManager.enable: Enable 'musicbrainz-cover'
+D: [0000.779] CoverPluginHandler.plugin_enable: Registered MusicBrainzCover cover source
+D: [0000.779] PluginManager.register_handler: Registering handler: 'PlaylistPluginHandler'
+D: [0000.779] PluginManager.register_handler: Registering handler: 'QueryPluginHandler'
+D: [0000.808] PluginManager.register_handler: Registering handler: 'PluggableOrders'
+D: [0000.809] PluginManager.register_handler: Registering handler: 'PluggableOrders'
+D: [0000.809] qltk.playorder.__compose_order: Updating PlaylistModel order to <Random>
+D: [0000.822] GStreamerPlayer.go_to: Going to None
+D: [0000.822] PlaylistMux.go_to: Told to go to None
+D: [0000.822] PlaylistModel.go_to: Told to go to None
+D: [0000.826] SongFileLibrary.monitor_dir('main'): Monitoring /home/aaditya/Music
+D: [0000.832] Query.__init__: Creating query ''
+D: [0000.832] Query.__init__: Creating query ''
+D: [0000.845] qltk.window.__restore_size: Restore size
+D: [0000.845] PluginManager.register_handler: Registering handler: 'EventPluginHandler'
+D: [0000.845] PluginManager.enable: Enable 'Equalizer'
+W: [0000.845] fake.plugins.equalizer.get_config: Converting old EQ config to new format.
+W: [0000.845] Equalizer.apply: Number of bands didn't match current. Using flat EQ.
+D: [0000.845] PluginManager.enable: Enable 'HeadphoneMonitor'
+D: [0000.853] PluginManager.enable: Enable 'Notify'
+D: [0000.853] PluginManager.enable: Enable 'SeekBar'
+D: [0000.854] PluginManager.enable: Enable 'Theme Switcher'
+D: [0000.908] PluginManager.enable: Enable 'mpris'
+D: [0000.909] PluginManager.enable: Enable 'Tray Icon'
+D: [0000.910] fake.plugins.trayicon.get_indicator_impl: use app indicator: True
+D: [0000.914] PlaylistLibrary.__init__: Initializing Playlist Library <PlaylistLibrary @ 0x72b367c1afc0> to watch 'main'
+D: [0000.914] PlaylistLibrary._read_playlists: Reading playlist directory /home/aaditya/.config/quodlibet/playlists (library: <SongFileLibrary @ 0x72b378188740>)
+D: [0000.914] SongFileLibrary.playlists: Created playlist library <PlaylistLibrary @ 0x72b367c1afc0>
+D: [0000.917] PluginManager.register_handler: Registering handler: 'UserInterfacePluginHandler'
+D: [0000.918] mmkeys.find_active_backend: Trying to find a mmkeys backend
+D: [0000.923] session.init: Trying GnomeSessionClient
+D: [0000.924] GnomeSessionClient.open: Connecting with gnome session manager
+D: [0000.924] session.init: org.gnome.SessionManager unowned
+D: [0000.924] session.init: Trying XfceSessionClient
+D: [0000.924] XfceSessionClient.open: Connecting with gnome session manager
+D: [0000.924] session.init: org.xfce.SessionManager unowned
+D: [0000.925] session.init: Trying XSMPSessionClient
+D: [0000.927] XSMPSessionClient.open: Connecting with XSMP
+D: [0000.927] session.init: open failed: 'SESSION_MANAGER environment variable not defined'
+D: [0000.927] session.init: Trying SessionClient
+D: [0000.927] _main.run: Entering quodlibet.main
+D: [0000.971] Query.__init__: Creating query ''
+D: [0000.975] PlaylistModel.set: Filling view model with 215 songs.
+D: [0000.976] GStreamerPlayer.go_to: Going to '/home/aaditya/Music/The Chainsmokers - Kills You Slowly.flac'
+D: [0000.976] PlaylistMux.go_to: Told to go to '/home/aaditya/Music/The Chainsmokers - Kills You Slowly.flac'
+D: [0000.976] PlaylistModel.go_to: Told to go to '/home/aaditya/Music/The Chainsmokers - Kills You Slowly.flac'
+D: [0000.977] QueueModel.go_to: Told to go to None
+D: [0000.977] GStreamerPlayer._end: End song
+D: [0000.977] player.gstbe.player.__destroy_pipeline: Destroying Gstreamer pipeline
+D: [0000.977] player.gstbe.player.__init_pipeline: User pipeline (from player.gst_pipeline): ''
+D: [0000.992] player.gstbe.player.__init_pipeline: GStreamer plugin pipeline: []
+D: [0000.992] player.gstbe.util.link_many: Attempting to link Gstreamer element(s): ['GstVolume', 'GstPulseSink']
+D: [0001.000] util.cover.manager.failure: Didn't get cover from ArtworkUrlCover: artwork_url missing
+D: [0001.001] util.cover.manager.run: Found local cover from EmbeddedCover: <tempfile._TemporaryFileWrapper object at 0x72b366ea0d10>
+E: [0001.008] errorreport.main.errorhook:
+    faulthandling.py:138:raise_and_clear_error: quodlibet.errorreport.faulthandling.FaultHandlerCrash: Fatal Python error: Segmentation fault
+    
+    Stack (most recent call first):
+      File "/usr/lib/python3.11/site-packages/quodlibet/order/__init__.py", line 136 in get_index
+      File "/usr/lib/python3.11/site-packages/quodlibet/order/__init__.py", line 138 in remaining
+      File "/usr/lib/python3.11/site-packages/quodlibet/order/reorder.py", line 27 in next
+      File "/usr/lib/python3.11/site-packages/quodlibet/order/__init__.py", line 68 in next_explicit
+      File "/usr/lib/python3.11/site-packages/quodlibet/qltk/songmodel.py", line 260 in next
+      File "/usr/lib/python3.11/site-packages/quodlibet/qltk/songmodel.py", line 72 in next
+      File "/usr/lib/python3.11/site-packages/quodlibet/player/_base.py", line 274 in next
+      File "/usr/lib/python3.11/site-packages/quodlibet/qltk/controls.py", line 298 in __next
+      File "/usr/lib/python3.11/site-packages/quodlibet/util/__init__.py", line 716 in wrap
+      File "/usr/lib/python3.11/site-packages/gi/overrides/Gtk.py", line 1694 in main
+      File "/usr/lib/python3.11/site-packages/quodlibet/_main.py", line 385 in run
+      File "/usr/lib/python3.11/site-packages/quodlibet/main.py", line 201 in main
+      File "/usr/bin/quodlibet", line 14 in <module>
+    
+    Extension modules: gi._gi, cairo._cairo, gi._gi_cairo, _dbus_bindings, _dbus_glib_bindings, lxml._elementpath, lxml.etree (total: 7)
